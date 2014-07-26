@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>Sentinels of the Multiverse Difficulty Calculator</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>		
+		<link href='http:css/style.css' rel='stylesheet' type='text/css'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<h1>Game setup parameters</h1>
+		<form action="/" method="POST">
+			<table>
+				<col/>
+				<col width="100%"/>
+				<tr>
+					<td><label>Number of heroes</label></td>
+					<td><select name="pc"><option>3</option><option>4</option><option>5</option></select></td>
+				</tr>
+				<tr>
+					<td><label>Loss percentage (1-100)</label></td>
+					<td><input type="range" min="1" max="99" name="lp" value="50" list="percentages"></td>
+				</tr>
+				<tr>
+					<td><label>Expansions</label></td>
+					<td>
+						<input type="checkbox" name="baseset" checked/>Base set<br/>
+						<input type="checkbox" name="miniexpansion"/>Mini-Expansions<br/>
+						<input type="checkbox" name="rookcity"/>Rook City<br/>
+						<input type="checkbox" name="infernalrelics"/>Infernal Relics<br/>
+						<input type="checkbox" name="shatteredtimelines"/>Shattered Timelines<br/>
+						<input type="checkbox" name="vengeance"/>Vengeance<br/>
+						<br/>
+						<input type="checkbox" name="promos"/>Include promos
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input id="submit" type="image" alt="Submit form" src="svg/fist.svg"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<p>
+			Based on <a href="http://x.gray.org/sentinels-of-the-multiverse-difficulty-scores.html">Michael Gray's difficulty score system</a>.
+		</p>
+		<p>
+			Calculator implementation by <a href="http://reddit.com/user/uhhhclem">uhhhclem</a>.
+		</p>
+		<datalist id="percentages">
+			<option>1</option>
+			<option>13</option>
+			<option>25</option>
+			<option>37</option>
+			<option>50</option>
+			<option>62</option>
+			<option>75</option>
+			<option>87</option>
+			<option>99</option>
+		</datalist>
+		<datalist id="ranges">
+			<option>0</option>
+			<option>10</option>
+			<option>20</option>
+			<option>30</option>
+			<option>40</option>
+			<option>50</option>
+		</datalist>
+	</body>
+</html>

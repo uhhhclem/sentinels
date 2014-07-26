@@ -1,0 +1,39 @@
+body, table, select, option, input {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	color: #ffffff;
+	background-color: #000000;
+}
+table {
+	width: 100%;
+}
+h1 {
+	font-size: 14pt;
+	font-weight: 700;
+}
+tr {
+	vertical-align: top;
+}
+td {
+	padding: 5pt;
+}
+label {
+	font-weight: 700;
+	white-space: nowrap;
+}
+p {
+	font-size: 10pt;
+}
+a:link {
+	color: #66cc00;
+}
+a:visited {
+	color: #666633;
+}
+#submit {
+	text-align: center;
+	vertical-align: center;
+	height: 36pt;
+	width: 36pt;
+}

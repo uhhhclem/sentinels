@@ -1,0 +1,11 @@
+application: sentinels-setup
+version: 1-0
+runtime: go
+api_version: go1
+handlers:
+- url: /css
+  static_dir: css
+- url: /svg
+  static_dir: svg
+- url: /.*
+  script: _go_app

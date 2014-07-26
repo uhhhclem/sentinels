@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='/css/style.css' rel='stylesheet' type='text/css'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		{{if .Setup}}
+		<table>
+			<tr>
+				<col/>
+				<col width=100%/>
+				<td><label>Heroes</label></td>
+				<td>
+					{{range .Setup.Heroes}}<span>{{printf "%s [%d]" .Name .Points}}</span><br/>{{end}}
+				</td>
+			</tr>
+			<tr>
+				<td><label>Villain</label></td>
+				<td>{{printf "%s [%d]" .Setup.Villain.Name .Setup.Villain.Points}}</td>
+			</tr>
+			<tr>
+				<td><label>Environment</label></td>
+				<td>{{printf "%s [%d]" .Setup.Environment.Name .Setup.Environment.Points}}</td>
+			</tr>
+			<tr>
+				<td><label>Number of heroes</label></td>
+				<td>{{printf "%s [%d]" .Nump .Setup.PcPoints}}
+			<tr>
+				<td><label>Total difficulty</label></td>
+				<td>{{printf "%d" .Setup.Difficulty}}</td>
+			</tr>
+			<tr>
+				<td colspan="2">Found in {{printf "%d" .Iterations}} iterations</td>
+			</tr>
+		</table>
+		{{else}}
+		<div>
+			{{.Msg}}
+		</div>
+		{{end}}
+	</body>
+</html>
