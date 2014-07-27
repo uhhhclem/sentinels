@@ -9,6 +9,10 @@ table {
 	width: 100%;
 }
 h1 {
+	font-size: 16pt;
+	font-weight: 700;
+}
+h2 {
 	font-size: 14pt;
 	font-weight: 700;
 }
@@ -30,6 +34,10 @@ a:link {
 }
 a:visited {
 	color: #666633;
+}
+input[type="range"] {
+    width: 150pt;
+    height: 24pt;
 }
 #submit {
 	text-align: center;

@@ -185,6 +185,7 @@ type Setup struct {
 	Villain     *Card
 	Environment *Card
 	PcPoints    int
+	LossPercent int
 	Difficulty  int
 }
 
@@ -207,11 +208,11 @@ func (s *Setup) String() string {
 }
 
 // makeSetup generates a random setup for the given card set and scores its difficulty.
-func makeSetup(cs *CardSet, pc, pcpts int) (*Setup, error) {
+func makeSetup(cs *CardSet, pc, lp, pcpts int) (*Setup, error) {
 	if pc > len(cs.Heroes) {
 		return nil, errors.New("Too many players for the selected heroes.")
 	}
-	s := &Setup{PcPoints: pcpts, Difficulty: pcpts}
+	s := &Setup{PcPoints: pcpts, LossPercent: lp, Difficulty: pcpts}
 	for {
 		bases := make(map[string]bool)
 		for _, i := range pick(len(cs.Heroes), pc) {
@@ -248,7 +249,7 @@ func FindSetup(pc, lp, rg int, exp []ExpansionType) (*Setup, int, error) {
 		if i >= 100000 {
 			return nil, i + 1, errors.New("Couldn't find a setup with these parameters.")
 		}
-		s, err := makeSetup(cs, pc, pcpts)
+		s, err := makeSetup(cs, pc, lp, pcpts)
 		if err != nil {
 			return nil, 0, err
 		}

@@ -31,6 +31,10 @@
 				<td>{{printf "%d" .Setup.Difficulty}}</td>
 			</tr>
 			<tr>
+				<td><label>Expected loss percentage</label></td>
+				<td>{{printf "%d" .Setup.LossPercent}}%</td>
+			</tr>
+			<tr>
 				<td colspan="2">Found in {{printf "%d" .Iterations}} iterations</td>
 			</tr>
 		</table>
